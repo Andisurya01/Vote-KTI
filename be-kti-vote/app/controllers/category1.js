@@ -16,3 +16,19 @@ exports.createCategory1 = async (req, res) => {
         })
     }
 }
+
+exports.getCategory1 = async (req, res) => {
+    try {
+        const data = await category1Services.getCategory1()
+        res.json({
+            status: "OK",
+            message: "Success",
+            data
+        })
+    } catch (err) {
+        res.status(err.statusCode).json({
+            status: "FAIL",
+            message: err.message,
+        })
+    }
+}

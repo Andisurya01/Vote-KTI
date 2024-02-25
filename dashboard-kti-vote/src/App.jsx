@@ -1,8 +1,15 @@
 import { Bar } from 'react-chartjs-2';
 // eslint-disable-next-line no-unused-vars
 import Chart from 'chart.js/auto';
-
+import { useEffect } from 'react';
+import { getCategory1 } from './api/categories';
 function App() {
+
+  useEffect(() => {
+    getCategory1().then((res) => {
+      console.log(res);
+    });
+  }, []);
   return (
     <main className='bg-gray-100'>
       <section className='mx-auto gap-10 pt-10 grid grid-cols-2'>

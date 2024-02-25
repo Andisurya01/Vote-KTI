@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
+import { createCategory1 } from './api/categoriesAPI';
 
 export default function App() {
   const basedListManager = ["manager 1", "manager 2", "manager 3", "manager 4", "manager 5", "manager 6", "manager 7", "manager 8", "manager 9", "manager 10"]
@@ -17,6 +18,9 @@ export default function App() {
   const lihat = () => {
     console.log("current category : ", category2);
     console.log("current list category : ", listManager);
+    createCategory1({categories : category2}).then((res) => {
+      console.log(res);
+    });
   }
 
   const handleChoice = (manager, index) => {

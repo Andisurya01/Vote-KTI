@@ -7,3 +7,7 @@ exports.createCategory1 = (payload) => {
 exports.deleteCategory1 = () => {
     return Vote.destroyAll();
 }
+
+exports.getCategory1 = () => {
+    return Vote.findAll();
+}

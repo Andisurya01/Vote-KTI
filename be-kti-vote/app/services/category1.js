@@ -18,3 +18,12 @@ exports.deleteCategory1 = async () => {
         throw new ApplicationError(`Failed to delete category1 : ${err.message}`, 500);
     }
 }
+
+exports.getCategory1 = async () => {
+    try {
+        const category1 = await category1Repository.getCategory1();
+        return category1;
+    } catch (err) {
+        throw new ApplicationError(`Failed to get category1 : ${err.message}`, 500);
+    }
+}

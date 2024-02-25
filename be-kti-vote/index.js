@@ -11,11 +11,9 @@ app.get('/', (req, res) => {
     res.send('hai!'); 
 });
 
-app.post('/vote', (req, res) => {
+app.get('/category', handleCategory1.getCategory1);
 
-});
-
-app.post('/category',handleCategory1.createCategory1);
+app.post('/category', handleCategory1.createCategory1);
 
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
